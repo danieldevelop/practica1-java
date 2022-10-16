@@ -10,21 +10,26 @@ public class MainAdivinaNumero
         int intentos = 0;
         int numeroUsuario;
         boolean acertado = false;
-        
-        do {
-            System.out.print("\nIntroduce un numero: ");
-            numeroUsuario = cin.nextInt();
-            intentos++;
-            
-            if (numeroUsuario == numero) {
-                acertado = true;
-            } else if (numeroUsuario < numero){
-                System.out.println("El numero es mayor");
-            } else {
-                System.out.println("El numero es menor");
-            }
-        } while (!acertado);
 
-        System.out.println("Has acertado en " + intentos + " intentos");
+        try {
+            do {
+                System.out.print("\nIntroduce un numero: ");
+                numeroUsuario = cin.nextInt();
+                intentos++;
+                
+                if (numeroUsuario == numero) {
+                    acertado = true;
+                } else if (numeroUsuario < numero){
+                    System.out.println("El numero es mayor");
+                } else {
+                    System.out.println("El numero es menor");
+                }
+            } while (!acertado);
+
+            System.out.println("Has acertado en " + intentos + " intentos");
+
+        } catch (Exception e) {
+            System.out.println("Error, el valor ingresado no es un numero");
+        }
     }
 }
